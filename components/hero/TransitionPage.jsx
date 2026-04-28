@@ -3,10 +3,10 @@ import React from "react";
 const TransitionPage = () => {
   return (
     <>
-      <div className="bg-white px-6 md:px-16 py-16 font-serif  flex justify-center">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+      <div className="bg-white px-6 md:px-16 py-16 font-serif  flex justify-center mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-start ">
           {/* LEFT */}
-          <div>
+          <div className="">
             <p className="text-xs tracking-[2px] text-gray-500 mb-3 ">
               TRANSITIONAL AND REAL ESTATE MANAGEMENT
             </p>
@@ -16,7 +16,7 @@ const TransitionPage = () => {
               for <span className="text-[#DABE9B]">Every Transition</span>
             </h1>
 
-            <p className="text-gray-600 text-sm leading-relaxed max-w-md mb-6 md:pt-20">
+            <p className="text-gray-600 text-sm text-justify leading-relaxed max-w-md mb-6 md:pt-20">
               We recognized a critical gap in the market: the need for a service
               that balances the deep empathy required for senior relocation with
               the cold, hard efficiency needed for property performance. Whether
@@ -32,8 +32,8 @@ const TransitionPage = () => {
           </div>
 
           {/* RIGHT */}
-          <div>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-md mb-6">
+          <div className=""> 
+            <p className="text-gray-600 text-sm text-justify leading-relaxed max-w-md mb-6">
               We recognized a critical gap in the market: the need for a service
               that balances the deep empathy required for senior relocation with
               the cold, hard efficiency needed for property performance. Whether

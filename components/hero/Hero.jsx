@@ -1,6 +1,8 @@
 "use client";
 import Navbar from "@/components/header/navbar/Navbar.jsx";
 import TransitionPage from "@/components/hero/TransitionPage.jsx"
+import ConsultationSection from "@/components/hero/ConsultationSection.jsx"
+import Footer from "@/components/footer/Footer.jsx"
 
 export default function Hero() {
   return (
@@ -41,6 +43,8 @@ export default function Hero() {
       </div>
     </section>
     <TransitionPage/>
+    <ConsultationSection/>
+    <Footer/>
         </>
   );
 }
