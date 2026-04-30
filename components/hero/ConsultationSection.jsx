@@ -22,9 +22,9 @@ const ConsultationSection = () => {
         </div>
 
         {/* RIGHT ACTIONS */}
-        <div className="flex flex-col items-start md:items-end gap-4">
+        <div className="flex flex-col items-start md:items-end gap-4 ">
           {/* PHONE */}
-          <button className="border w-65 border-[#0E0E2C] text-[#0E0E2C] px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-[#0E0E2C] hover:text-white transition">
+          <button className="border sm:w-65 border-[#0E0E2C] text-[#0E0E2C] text-[12px] sm:text-md px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-[#0E0E2C] hover:text-white transition">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -40,7 +40,7 @@ const ConsultationSection = () => {
           </button>
 
           {/* CTA BUTTON */}
-          <button className="bg-[#0E0E2C] w-65 text-white px-8 py-3 rounded-md font-small tracking-wide hover:opacity-90 transition">
+          <button className="bg-[#0E0E2C] sm:w-65 text-white text-[12px] sm:text-md px-8 py-3 rounded-md font-small tracking-wide hover:opacity-90 transition">
             BOOK A CONSULTATION
           </button>
         </div>
