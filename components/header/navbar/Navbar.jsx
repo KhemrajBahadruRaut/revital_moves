@@ -25,8 +25,8 @@ const Navbar = () => {
 
           {/* LEFT MENU */}
           <div className="hidden md:flex gap-4 lg:gap-10 w-full justify-end">
-            <a href="#">HOME</a>
-            <a href="#">ABOUT</a>
+            <a href="/">HOME</a>
+            <a href="/about">ABOUT</a>
             <a href="#">CONTACT</a>
           </div>
 
