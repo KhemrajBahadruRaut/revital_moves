@@ -1,6 +1,6 @@
 export default function SubAboutSection() {
   return (
-    <section className="w-full px-6 md:px-16 py-5 am:py-20 bg-[#F8F8F8] max-w-7xl mx-auto   ">
+    <section className="w-full px-6 md:px-16 py-5 am:py-20   ">
       {/* WHY CHOOSE US */}
       <h2 className="text-center text-3xl sm:text-4xl font-serif text-[#0F172A] mb-5 sm:mb-16">
         Why Choose Us
