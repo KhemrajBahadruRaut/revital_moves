@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="relative w-full z-50 ">
+    <div className="relative w-full z-50  sm:pb-4">
 
       {/* LEFT LINES */}
 
@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-4 lg:gap-10 w-full justify-end">
             <a href="/">HOME</a>
             <a href="/about">ABOUT</a>
-            <a href="#">CONTACT</a>
+            <a href="/contact">CONTACT</a>
           </div>
 
           {/* LOGO */}
@@ -43,7 +43,7 @@ const Navbar = () => {
 
           {/* RIGHT MENU */}
           <div className="hidden md:flex gap-4 lg:gap-10 w-full justify-start">
-            <a href="#">MOVING SERVICES</a>
+            <a href="/moving-services">MOVING SERVICES</a>
             <a href="#">RENTAL MGMT</a>
             <a href="#">CAREER</a>
           </div>
