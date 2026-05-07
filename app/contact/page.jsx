@@ -11,7 +11,7 @@ export default function page() {
       <div className="w-full font-sans text-[#1a1a1a]">
         {/* HERO */}
         <section
-          className="w-full py-20 px-6 md:px-16 text-white"
+          className="w-full py-20 px-6 md:px-16 text-white pt-35"
           style={{
             background:
               "linear-gradient(to right, #00003C, #00003CCC, #00003C)",
