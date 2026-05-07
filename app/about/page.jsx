@@ -2,18 +2,20 @@ import SubAboutSection from "../../components/subAbout/SubAboutSection";
 import ConsultationSection from "../../components/hero/ConsultationSection.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
+import WhyChooseUs from "./WhyChooseUs.jsx";
+import MissionVison from "./MissionVison.jsx";
 
 export default function AboutSection() {
   return (
     <>
       <Navbar />
-      <section className="w-full px-6 md:px-16 py-10 bg-white  container mx-auto">
+      <section className="w-full px-6 md:px-16 py-10 pt-35 bg-white  container mx-auto">
         {/* TOP SECTION */}
         <div className="grid xl:grid-cols-[auto_1fr] xl:gap-18 gap-5 items-start">
           {/* LEFT TEXT */}
           <div className="">
-            <p className="text-sm tracking-widest text-gray-500 mb-4">
-              REVITAL MOVES
+            <p className="text-sm tracking-widest font-bold text-gray-500 mb-4">
+              ABOUT REVITAL MOVES
             </p>
 
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif leading-tight text-[#0F172A]">
@@ -34,19 +36,26 @@ export default function AboutSection() {
         </div>
 
         {/* IMAGES */}
-        <div className="flex gap-14 mt-12 max-sm:flex-wrap">
+        <div className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5 mt-12 ">
           <div className="">
             <img
-              src="/about/a1.jpg"
+              src="/about/a3.jpg"
               alt="moving"
-              className=" w-full sm:h-100 lg:h-150 object-cover rounded-xl"
+              className=" w-full  object-cover h-full rounded-xl"
             />
           </div>
           <div className="">
             <img
-              src="/about/a2.jpg"
+              src="/about/a4.jpg"
               alt="delivery"
-              className="rounded-xl w-full sm:h-100 lg:h-150 object-cover"
+              className="rounded-xl w-full h-full object-cover"
+            />
+          </div>
+          <div className="">
+            <img
+              src="/about/a5.jpg"
+              alt="delivery"
+              className="rounded-xl w-full h-full object-cover"
             />
           </div>
         </div>
@@ -54,25 +63,28 @@ export default function AboutSection() {
         {/* OUR STORY */}
         <div className="grid md:grid-cols-[auto_1fr] gap-3 sm:gap-10 mt-16 items-start">
           {/* LEFT */}
-          <div className="flex items-center gap-4 ">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif text-[#0F172A] whitespace-nowrap">
-              Our Story
-            </h2>
-            <span className="relative top-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="md:-rotate-40 h-6 sm:h-8 lg:h-10 w-auto"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth={2}
-                  d="M12 4v16m-6-6l6 6l6-6"
-                />
-              </svg>
-            </span>{" "}
+          <div className="">
+            <div className="flex items-center gap-4 px-1 py-2 text-[#DABE9B]">Our Story</div>
+            <div className=" flex ">
+              <div className="text-2xl sm:text-4xl md:text-5xl font-serif text-[#0F172A] max-w-70">
+                Built around families in transition
+              </div>
+              <span className="relative top-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="md:-rotate-40 h-6 sm:h-8 lg:h-10 w-auto"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeWidth={2}
+                    d="M12 4v16m-6-6l6 6l6-6"
+                  />
+                </svg>
+              </span>{" "}
+            </div>
           </div>
 
           {/* RIGHT CONTENT */}
@@ -100,6 +112,8 @@ export default function AboutSection() {
           </div>
         </div>
       </section>
+      <WhyChooseUs/>
+      <MissionVison/>
       <SubAboutSection />
       <ConsultationSection />
       <Footer />
