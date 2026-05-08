@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../../components/header/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
-import ConsultationSection from "../../components/hero/ConsultationSection";
+import Navbar from "../../components/header/navbar/Navbar.jsx";
+import Footer from "../../components/footer/Footer.jsx";
+import ConsultationSection from "../../components/hero/ConsultationSection.jsx";
 
 export default function page() {
   const [openIndex, setOpenIndex] = useState(null);

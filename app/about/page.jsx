@@ -1,4 +1,4 @@
-import SubAboutSection from "../../components/subAbout/SubAboutSection";
+import SubAboutSection from "../../components/subAbout/SubAboutSection.jsx";
 import ConsultationSection from "../../components/hero/ConsultationSection.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
