@@ -1,9 +1,9 @@
-import SubAboutSection from "../../components/subAbout/SubAboutSection.jsx";
-import ConsultationSection from "../../components/hero/ConsultationSection.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
+import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx"
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import MissionVison from "./MissionVison.jsx";
+import Faq from "./Faq.jsx";
 
 export default function AboutSection() {
   return (
@@ -114,8 +114,8 @@ export default function AboutSection() {
       </section>
       <WhyChooseUs/>
       <MissionVison/>
-      <SubAboutSection />
-      <ConsultationSection />
+      <Faq/>
+      <ReadyWhenYouAre/>
       <Footer />
     </>
   );

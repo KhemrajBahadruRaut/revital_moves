@@ -22,13 +22,13 @@ const routeConfig = {
     scrolledText: "text-[#00003C]",
     scrolledActive: "text-[#DABE9B]",
   },
-  "/moving-services": {
+  "/services": {
     textColor: "text-[#FFFFFF]",
     activeColor: "text-[#DABE9B]",
     scrolledText: "text-[#00003C]",
     scrolledActive: "text-[#DABE9B]",
   },
-  "/rental-mgmt": {
+  "/CONSULTATION": {
     textColor: "text-[#FFFFFF]",
     activeColor: "text-[#DABE9B]",
     scrolledText: "text-[#00003C]",
@@ -53,8 +53,8 @@ const navLinks = [
   { href: "/", label: "HOME", side: "left" },
   { href: "/about", label: "ABOUT", side: "left" },
   { href: "/contact", label: "CONTACT", side: "left" },
-  { href: "/moving-services", label: "MOVING SERVICES", side: "right" },
-  { href: "/rental-mgmt", label: "RENTAL MGMT", side: "right" },
+  { href: "/services", label: "SERVICES", side: "right" },
+  { href: "/contact", label: "CONSULTATION", side: "right" },
   { href: "/career", label: "CAREER", side: "right" },
 ];
 

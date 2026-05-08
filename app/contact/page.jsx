@@ -1,4 +1,3 @@
-
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
@@ -7,14 +6,16 @@ import Footer from "../../components/footer/Footer.jsx";
 export default function page() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="w-full font-sans text-[#1a1a1a]">
         {/* HERO */}
         <section
-          className="w-full py-20 px-6 md:px-16 text-white pt-35"
+          className="w-full py-20 px-6 md:px-16 text-white pt-35 bg-cover bg-center bg-no-repeat"
           style={{
-            background:
-              "linear-gradient(to right, #00003C, #00003CCC, #00003C)",
+            backgroundImage: `
+      linear-gradient(to right, #00003C 0%, rgba(0,0,60,0.9) 25%, transparent 70%),
+      url('/contact/c1.jpg')
+    `,
           }}
         >
           <p className="text-sm tracking-widest text-[#DABE9B] uppercase mb-3">
@@ -84,6 +85,17 @@ export default function page() {
                     location, address, name
                   </p>
                   <p className="text-xs text-gray-400">MA, USA</p>
+                </div>
+              </div>
+
+              {/* working Hours */}
+              <div className="flex items-center gap-4 border border-[#DABE9B80] p-4 rounded-lg">
+                <FiMapPin className="text-[#DABE9B] text-xl" />
+                <div>
+                  <p className="text-sm font-medium">Hours</p>
+                  <p className="text-gray-600 text-sm">
+                    Mon-Fri, 8:30am-6:00pm
+                  </p>
                 </div>
               </div>
             </div>
@@ -176,7 +188,7 @@ export default function page() {
         </section>
 
         {/* MAP + OFFICE */}
-        <section className="px-6 md:px-16 pb-16 grid md:grid-cols-2  gap-10 items-center border">
+        <section className="px-6 md:px-16 pb-16 grid md:grid-cols-2  gap-10 items-center">
           <div className="w-full h-60 bg-gray-300 rounded-lg flex items-center justify-center">
             <FiMapPin className="text-2xl text-[#00003C]" />
           </div>
@@ -201,7 +213,7 @@ export default function page() {
           </div>
         </section>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
