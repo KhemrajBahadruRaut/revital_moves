@@ -1,10 +1,10 @@
-import Link from "next/link";
-import React from "react";
+import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
 
-export default function Footer() {
+export default function footer() {
   return (
-    <footer className="bg-[#00003C] text-white pt-16 pb-10 relative">
+        <footer className="bg-[#00003C] text-white pt-16 pb-10 relative">
       {/* top lines */}
       <div className=" bg-[#DABE9B]  w-px absolute top-0 right-6 sm:right-10 md:right-12 h-15 sm:h-17.5 md:h-20 " />
       <div className="bg-[#DABE9B] h-px absolute top-5 md:top-8 w-25 right-0 sm:w-40 md:w-70 lg:w-100 xl:w-145" />
@@ -141,5 +141,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
