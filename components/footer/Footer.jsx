@@ -97,7 +97,7 @@ export default function footer() {
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="hover:text-white cursor-pointer">Career</li>
             <li className="hover:text-white cursor-pointer">
-              Book COnsultation
+              Book Consultation
             </li>
           </ul>
         </div>
