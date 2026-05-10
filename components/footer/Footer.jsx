@@ -122,7 +122,7 @@ export default function footer() {
 
         {/* COPYRIGHT */}
         <p className="text-center">
-          © {new Date().getFullYear()} Nepal Cosmetic Surgery. All rights
+          © {new Date().getFullYear()} Revital Moves. All rights
           reserved. | Terms of Services | Privacy Policy
         </p>
 
