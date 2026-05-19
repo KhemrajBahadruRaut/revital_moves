@@ -1,3 +1,4 @@
+"use client"
 import Footer from "../../components/footer/Footer.jsx";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
 import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx";
