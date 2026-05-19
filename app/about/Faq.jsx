@@ -6,22 +6,22 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
-    {
-      q: "Lorem ipsum dolor sit amet, is this new add consectetur adipisicing elit, sed do eius mod tempor incid et dolore?",
-      a: "Lorem ipsum answer content goes here."
+       {
+      q: "How do you find and screen tenants?",
+      a: "We conduct thorough background, credit, and rental history checks on every applicant. We also verify income and employment to ensure only reliable, long-term tenants occupy your property. You get peace of mind – we do the vetting."
     },
     {
-      q: "Lorem ipsum dolor sit amet, is this new add consectetur adipisicing elit, sed do eius mod tempor incid et dolore?",
-      a: "Lorem ipsum answer content goes here."
+      q: "What are your fees and how do you get paid?",
+      a: "Our management fee is a simple percentage of the monthly rent collected. We only get paid when you get paid. There are no hidden fees, and we provide detailed monthly statements for complete transparency."
     },
     {
-      q: "Lorem ipsum dolor sit amet, is this new add consectetur adipisicing elit, sed do eius mod tempor incid et dolore?",
-      a: "Lorem ipsum answer content goes here."
+      q: "Who handles maintenance and repairs?",
+      a: "We have a vetted network of licensed, insured contractors who respond promptly to all maintenance requests. For emergencies, we are available 24/7. You never receive late-night calls – we handle everything."
     },
-    {
-      q: "Lorem ipsum dolor sit amet, is this new add consectetur adipisicing elit, sed do eius mod tempor incid et dolore?",
-      a: "Lorem ipsum answer content goes here."
-    }
+     {
+      q: "How do you handle rent collection and late payments?",
+      a: "We use automated rent collection systems that deposit rent directly into your account. If a tenant pays late, we enforce lease terms including late fees and follow legal procedures to protect your income."
+    },
   ];
 
   const toggle = (i) => {
