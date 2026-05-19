@@ -61,7 +61,7 @@ export default function page() {
                 <FiPhone className="text-[#DABE9B] text-xl" />
                 <div>
                   <p className="text-sm font-medium">Phone</p>
-                  <p className="text-gray-600 text-sm">(800) 900 0000</p>
+                  <p className="text-gray-600 text-sm">+1 774-287-6819</p>
                   <p className="text-xs text-gray-400">Mon - Fri, 9PM - 5PM</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function page() {
                 <FiMail className="text-[#DABE9B] text-xl" />
                 <div>
                   <p className="text-sm font-medium">Email</p>
-                  <p className="text-gray-600 text-sm">abc@revitalmoves.com</p>
+                  <p className="text-gray-600 text-sm">management@revitalmoves.com</p>
                   <p className="text-xs text-gray-400">We Will Get Back Soon</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function page() {
                 <div>
                   <p className="text-sm font-medium">Office</p>
                   <p className="text-gray-600 text-sm">
-                    location, address, name
+                    270 Littleton Rd, Westford, MA, United States, 01852
                   </p>
                   <p className="text-xs text-gray-400">MA, USA</p>
                 </div>
@@ -131,12 +131,12 @@ export default function page() {
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  placeholder="Enter first name"
+                  placeholder="Enter First name"
                   className="p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
                 />
                 <input
                   type="text"
-                  placeholder="Enter last name"
+                  placeholder="Enter Last name"
                   className="p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
                 />
               </div>
@@ -188,30 +188,49 @@ export default function page() {
         </section>
 
         {/* MAP + OFFICE */}
-        <section className="px-6 md:px-16 pb-16 grid md:grid-cols-2  gap-10 items-center">
-          <div className="w-full h-60 bg-gray-300 rounded-lg flex items-center justify-center">
-            <FiMapPin className="text-2xl text-[#00003C]" />
-          </div>
+        <section className="px-6 md:px-16 pb-16 grid md:grid-cols-2 gap-10 items-center">
+  {/* Google Map Embed */}
+  <div className="w-full h-60 rounded-lg overflow-hidden">
+    <iframe
+      title="Office Location"
+      src="https://www.google.com/maps?q=270+Littleton+Rd,+Westford,+MA,+United+States,+01852&output=embed"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
 
-          <div>
-            <p className="text-sm uppercase tracking-widest text-[#DABE9B] mb-2">
-              Contact Information
-            </p>
+  <div>
+    <p className="text-sm uppercase tracking-widest text-[#DABE9B] mb-2">
+      Contact Information
+    </p>
 
-            <h3 className="text-2xl font-semibold mb-3">Visit Our Office</h3>
+    <h3 className="text-2xl font-semibold mb-3">Visit Our Office</h3>
 
-            <div className="flex items-center gap-2 text-gray-600 mb-4">
-              <FiMapPin className="text-[#00003C]" />
-              <span>location, address, name</span>
-            </div>
+    <div className="flex items-center gap-2 text-gray-600 mb-4">
+      <FiMapPin className="text-[#00003C]" />
+      <span>270 Littleton Rd, Westford</span>
+    </div>
 
-            <p className="text-gray-500 mb-6">MA, United States</p>
+    <p className="text-gray-500 mb-6">
+      MA, United States 01852
+    </p>
 
-            <button className="px-6 py-2 border border-[#00003C] text-[#00003C] rounded-md hover:bg-[#00003C] hover:text-white transition">
-              Get Directions
-            </button>
-          </div>
-        </section>
+    {/* Directions Button */}
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=270+Littleton+Rd,+Westford,+MA,+United+States,+01852"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <button className="px-6 py-2 border border-[#00003C] text-[#00003C] rounded-md hover:bg-[#00003C] hover:text-white transition">
+        Get Directions
+      </button>
+    </a>
+  </div>
+</section>
       </div>
       <Footer />
     </>
