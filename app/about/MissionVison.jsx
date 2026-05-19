@@ -4,30 +4,24 @@ const MissionVison = () => {
   return (
     <div className="max-w-7xl m-auto">
       <h2 className="pl-4 md:hidden text-2xl sm:text-4xl font-serif text-[#0F172A] ">
-            Our Mission & Vision
-          </h2>
+        Our Mission & Vision
+      </h2>
       <div className="flex gap-5 sm:gap-12 mt-4 sm:mt-10  items-start  container mx-auto">
-        {/* LEFT*/}        
+        {/* LEFT*/}
         <div className="text-gray-600 text-justify sm:text-xl flex-2  space-y-4 px-4 sm:px-0">
           <p>
-            The purpose of lorem ipsum is to create a natural looking block of
-            text (sentence, paragraph, page, etc.) that doesn't distract from
-            the layout. A practice not without controversy, laying out pages
-            with meaningless filler text can be very useful when the focus is
-            meant to be on design, not content.
+            To serve Massachusetts property owners with devotion, transparency,
+            and white-glove care – so they enjoy passive income without stress.
           </p>
 
           <p>
-            The passage experienced a surge in popularity during the 1960s when
-            Letraset used it on their dry-transfer sheets, and again during the
-            90s as desktop publishers bundled the text with their software.
-            Today it's seen all around the web; on templates, websites, and
-            stock designs.
+            To redefine rental management as a relationship of trust, not just a
+            transaction – one home, one owner, one legacy at a time.
           </p>
         </div>
 
         {/* RIGHT */}
-       
+
         <div className="flex gap-4  ">
           <div className="w-0.5 h-40 relative top-2 bg-[#000000] hidden md:flex"></div>
 
@@ -49,7 +43,6 @@ const MissionVison = () => {
           <h2 className="hidden md:flex sm:text-3xl md:text-5xl font-serif text-[#0F172A] leading-snug">
             Our Mission <br />& Vision
           </h2>
-         
         </div>
       </div>
     </div>
