@@ -1,3 +1,4 @@
+"use client"
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
