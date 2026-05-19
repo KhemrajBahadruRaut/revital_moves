@@ -37,16 +37,16 @@ const steps = [
 
 const testimonials = [
   {
-    text: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"`,
-    name: "Client name",
+    text: `"They truly care. My property has never been in better hands."`,
+    name: "Sujan Lama",
   },
   {
-    text: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"`,
-    name: "Client name",
+    text: `"They truly care. My property has never been in better hands."`,
+    name: "Chandi Kodthiwada",
   },
   {
-    text: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"`,
-    name: "Client name",
+    text: `"Finally, a management company that treats my home like their own. Highly recommend."`,
+    name: "Vijay Ejenkar",
   },
 ];
 
