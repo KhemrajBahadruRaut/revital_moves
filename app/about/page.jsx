@@ -1,6 +1,6 @@
 import Footer from "../../components/footer/Footer.jsx";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
-import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx"
+import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import MissionVison from "./MissionVison.jsx";
 import Faq from "./Faq.jsx";
@@ -11,9 +11,9 @@ export default function AboutSection() {
       <Navbar />
       <section className="w-full px-6 md:px-16 py-10 pt-35 bg-white  container mx-auto">
         {/* TOP SECTION */}
-        <div className="grid xl:grid-cols-[auto_1fr] xl:gap-18 gap-5 items-start">
+        <div className="grid xl:grid-cols-[auto_1fr] xl:gap-12 gap-5 items-start">
           {/* LEFT TEXT */}
-          <div className="">
+          <div className=" ">
             <p className="text-sm tracking-widest font-bold text-gray-500 mb-4">
               ABOUT REVITAL MOVES
             </p>
@@ -27,10 +27,14 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT TEXT */}
-          <div className=" xl:pt-25">
-            <p className="text-gray-600 leading-relaxed sm:text-lg text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div className="">
+            <p className="text-gray-600 leading-relaxed sm:text-sm text-justify xl:relative top-10">
+              Revital Moves was born from a simple belief: your property
+              deserves more than management. It deserves devotion.
+              <br /> Based in Westford, Massachusetts, we serve discerning
+              property owners across the state who expect nothing less than
+              white-glove service, complete transparency, and genuine care for
+              their most valuable asset.
             </p>
           </div>
         </div>
@@ -64,10 +68,12 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-[auto_1fr] gap-3 sm:gap-10 mt-16 items-start">
           {/* LEFT */}
           <div className="">
-            <div className="flex items-center gap-4 px-1 py-2 text-[#DABE9B]">Our Story</div>
+            <div className="flex items-center gap-4 px-1 py-2 text-[#DABE9B]">
+              Our Story
+            </div>
             <div className=" flex ">
-              <div className="text-2xl sm:text-4xl md:text-5xl font-serif text-[#0F172A] max-w-70">
-                Built around families in transition
+              <div className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#0F172A] max-w-70">
+                What Makes Us Different?{" "}
               </div>
               <span className="relative top-1">
                 <svg
@@ -95,27 +101,29 @@ export default function AboutSection() {
             {/* TEXT */}
             <div className="text-md sm:text-xl text-justify leading-relaxed space-y-4 ">
               <p>
-                At our core, we are dedicated to making life’s transitions
-                easier. Whether it’s helping seniors move into a new chapter of
-                their lives or managing rental properties with professionalism,
-                we provide services built on trust, care, and reliability.
+                We are not a faceless corporate rental agency. We are a
+                boutique, owner-focused stewardship firm that treats every home
+                as if it were our own. From rigorous tenant screening to 24/7
+                support and meticulous financial reporting, we handle every
+                detail so you can enjoy the elegance of passive income without
+                the stress.
               </p>
 
-              <p>
+              {/* <p>
                 We understand that moving especially for seniors can be
                 emotional and overwhelming. That’s why our team approaches every
                 move with patience, respect, and attention to detail. From
                 careful packing to safe transportation and thoughtful downsizing
                 support, we ensure every step is handled with compassion.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
       </section>
-      <WhyChooseUs/>
-      <MissionVison/>
-      <Faq/>
-      <ReadyWhenYouAre/>
+      <WhyChooseUs />
+      <MissionVison />
+      <Faq />
+      <ReadyWhenYouAre />
       <Footer />
     </>
   );
