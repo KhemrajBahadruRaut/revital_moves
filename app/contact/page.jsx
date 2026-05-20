@@ -13,9 +13,7 @@ export default function page() {
         <section
           className="w-full py-20 px-6 md:px-16 text-white pt-35 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `
-      linear-gradient(to right, #00003C 0%, rgba(0,0,60,0.9) 25%, transparent 70%),
-      url('/contact/c1.jpg')
+            backgroundImage: `linear-gradient(to right, #00003C 0%, rgba(0,0,60,0.9) 25%, transparent 70%), url('/contact/c1.jpg')
     `,
           }}
         >
@@ -62,7 +60,7 @@ export default function page() {
                 <FiPhone className="text-[#DABE9B] text-xl" />
                 <div>
                   <p className="text-sm font-medium">Phone</p>
-                  <p className="text-gray-600 text-sm">+1 774-287-6819</p>
+                  <p className="text-gray-600 text-sm">(774)-287-6819</p>
                   <p className="text-xs text-gray-400">Mon - Fri, 9PM - 5PM</p>
                 </div>
               </div>

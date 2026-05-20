@@ -66,10 +66,13 @@ export default function RentalManagementSection() {
               What We Offer
             </p>
 
-            <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-serif leading-tight max-w-4xl">
-              Full-service rental management,
+            <h2 className="text-white text-md sm:text-2xl md:text-3xl lg:text-4xl font-serif leading-tight max-w-4xl">
+              Comprehensive Property Management Built for Peace of Mind
               <br />
-              designed around your family.
+              <span className="text-sm sm:text-md md:text-xl">
+              Full-service rental management designed to protect your property,
+              maximize returns, and remove day-to-day stress.
+              </span>
             </h2>
           </div>
 

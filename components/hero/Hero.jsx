@@ -23,9 +23,9 @@ export default function Hero() {
         <div className="relative z-10 flex flex-col items-center pt-10 md:pt-30  text-center px-4">
           <div className="max-w-2xl sm:max-w-5xl w-full">
             <h1 className="font-serif text-white leading-tight text-3xl sm:text-5xl xl:text-6xl">
-              Expert <span>Real Estate</span> Rental
+              Premium <span>Property</span> Management
               <br className="block" />
-              <span className="">Management</span>
+              <span className="">in Massachusetts</span>
             </h1>
 
             <p className="mt-4 sm:mt-6 text-[#DADADA] max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl">

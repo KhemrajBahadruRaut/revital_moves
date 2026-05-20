@@ -20,16 +20,29 @@ export default function ReadyWhenYouAre() {
             </p>
 
             {/* HEADING */}
-            <h2 className="text-[#00003C] text-2xl md:text-4xl lg:text-5xl leading-[1.15] font-serif  mb-8">
-              Let's turn your family's home into reliable income.
+            <h2 className="text-[#00003C] text-2xl md:text-3xl lg:text-4xl leading-[1.15] font-serif  mb-8">
+              Let’s turn your property into reliable, stress-free income.
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="text-[#616161] text-lg text-justify sm:leading-10 max-w-4xl">
-              A short consultation is all it takes to understand your goals,
-              walk through the property, and outline a transparent management
-              plan.
-            </p>
+            <ul className="space-y-4 text-gray-600 leading-7">
+              <li>
+                A short consultation is all it takes to understand your goals,
+                evaluate your property, and outline a clear, transparent
+                management plan tailored to your needs.
+              </li>
+
+              <li>
+                At Revital Moves, we make it simple to move from uncertainty to
+                confidence — with a structured approach to pricing, tenant
+                placement, maintenance, and ongoing management.
+              </li>
+
+              <li>
+                When you’re ready, we’re here to help you protect your property
+                and unlock its full potential.
+              </li>
+            </ul>
           </div>
 
           {/* RIGHT SIDE */}
@@ -42,7 +55,7 @@ export default function ReadyWhenYouAre() {
               }}
             >
               <Phone size={17} strokeWidth={2.2} />
-              +1 774-287-6819
+              (774)-287-6819
             </button>
 
             {/* CTA BUTTON */}

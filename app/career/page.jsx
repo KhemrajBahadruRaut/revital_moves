@@ -15,27 +15,60 @@ export default function CareersSection() {
     {
       icon: <FiHeart />,
       title: "Purposeful Work",
-      desc: "Help families through one of life's most meaningful transition",
+      desc: "Help property owners protect and improve their homes.",
     },
     {
       icon: <FiLink />,
       title: "Close-Knit Team",
-      desc: "A small, experienced group that genuinely supports one another.",
+      desc: "Small, supportive, accountable team culture.",
     },
     {
       icon: <FiImage />,
       title: "Real Growth",
-      desc: "Clear advancement paths and ongoing professional development.",
+      desc: "Opportunities to grow with the company across Massachusetts.",
     },
     {
       icon: <FiShield />,
       title: "Full Benefits",
-      desc: "Health, dental, retirement matching, and generous paid time off.",
+      desc: "Competitive compensation, health coverage, retirement options, and paid time off.",
     },
   ];
 
-  const jobs = [1, 2, 3];
-
+const jobs = [
+  {
+    title: "Property Manager",
+    type: "Full-Time | On-Site / Field-Based",
+    desc: "We are looking for a detail-oriented Property Manager to oversee day-to-day operations of residential properties. Responsibilities include tenant coordination, maintenance oversight, inspections, and ensuring smooth communication between owners and tenants.",
+    responsibilities: [
+      "Tenant communication and issue resolution",
+      "Coordinating maintenance and repairs",
+      "Property inspections and reporting",
+      "Supporting lease enforcement and renewals",
+    ],
+  },
+  {
+    title: "Maintenance Coordinator",
+    type: "Full-Time | On-Site",
+    desc: "Responsible for managing maintenance requests, coordinating vendors, and ensuring timely completion of repairs across multiple properties.",
+    responsibilities: [
+      "Assigning and tracking maintenance jobs",
+      "Vendor coordination and follow-ups",
+      "Emergency response coordination",
+      "Quality control checks",
+    ],
+  },
+  {
+    title: "Leasing Specialist",
+    type: "Full-Time | On-Site / Hybrid",
+    desc: "Focuses on marketing rental properties, screening applicants, and securing qualified tenants quickly and efficiently.",
+    responsibilities: [
+      "Property listings and marketing",
+      "Tenant screening and applications",
+      "Lease preparation support",
+      "Vacancy reduction strategies",
+    ],
+  },
+];
   return (
     <>
       <Navbar />
@@ -119,37 +152,53 @@ export default function CareersSection() {
           </div>
 
           {/* JOB LIST */}
-          <div className="space-y-7  max-w-5xl m-auto">
-            {jobs.map((job, index) => (
-              <div
-                key={index}
-                className="border-b border-[#DABE9B] pb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+<div className="space-y-7 max-w-5xl m-auto">
+  {jobs.map((job, index) => (
+    <div
+      key={index}
+      className="border-b border-[#DABE9B] pb-10 flex flex-col md:flex-row md:items-start md:justify-between gap-8"
+    >
+      {/* LEFT */}
+      <div className="max-w-3xl">
+        <h3 className="text-2xl font-semibold text-[#00003C] mb-3">
+          {job.title}
+        </h3>
+
+        <p className="uppercase text-[#A69177] text-xs tracking-[2px] font-semibold mb-5">
+          {job.type}
+        </p>
+
+        <p className="text-[#46464F] leading-7 mb-6">
+          {job.desc}
+        </p>
+
+        <div>
+          <h4 className="text-[#00003C] font-semibold mb-4">
+            Key Responsibilities:
+          </h4>
+
+          <ul className="space-y-3">
+            {job.responsibilities.map((item, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 text-[#46464F] leading-7"
               >
-                {/* LEFT */}
-                <div className="max-w-3xl">
-                  <h3 className="text-2xl font-semibold text-[#00003C] mb-3">
-                    Project Manager
-                  </h3>
-
-                  <p className="uppercase text-[#A69177] text-xs tracking-[2px] font-semibold mb-5">
-                    FULL TIME | ON-SITE
-                  </p>
-
-                  <p className="text-[#46464F] leading-7">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua, quis nostrud exercitation ullamco laboris.
-                  </p>
-                </div>
-
-                {/* BUTTON */}
-                <button className="bg-[#A69177] text-white px-8 py-4 rounded-lg flex items-center gap-3 hover:opacity-90 transition w-fit">
-                  LEARN MORE
-                  <FiArrowRight />
-                </button>
-              </div>
+                <span className="text-[#DABE9B] mt-1">•</span>
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+        </div>
+      </div>
+
+      {/* BUTTON */}
+      <button className="bg-[#A69177] text-white px-8 py-4 rounded-lg flex items-center gap-3 hover:opacity-90 transition w-fit h-fit">
+        JOIN OUR TEAM
+        <FiArrowRight />
+      </button>
+    </div>
+  ))}
+</div>
         </div>
       </section>
       <ReadyWhenYouAre/>

@@ -10,13 +10,14 @@ const MissionVison = () => {
         {/* LEFT*/}
         <div className="text-gray-600 text-justify sm:text-xl flex-2  space-y-4 px-4 sm:px-0">
           <p>
-            To serve Massachusetts property owners with devotion, transparency,
-            and white-glove care – so they enjoy passive income without stress.
+            To provide property owners across Massachusetts with a higher
+            standard of rental management built on trust, transparency, and
+            long-term value creation.
           </p>
 
           <p>
-            To redefine rental management as a relationship of trust, not just a
-            transaction – one home, one owner, one legacy at a time.
+            To redefine property management as a relationship of stewardship
+            where every home is managed with care and responsibility.
           </p>
         </div>
 

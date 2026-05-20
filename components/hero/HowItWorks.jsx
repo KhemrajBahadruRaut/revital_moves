@@ -1,52 +1,46 @@
 "use client";
 
-import {
-  Phone,
-  Home,
-  User,
-  ReceiptText,
-  Star,
-} from "lucide-react";
+import { Phone, Home, User, ReceiptText, Star } from "lucide-react";
 
 const steps = [
   {
     number: "01",
     icon: <Phone size={28} />,
     title: "Consultation",
-    desc: "We meet at the home, listen to your goals, and assess income potential.",
+    desc: "We assess your property, understand your goals, and evaluate rental potential.",
   },
   {
     number: "02",
     icon: <Home size={28} />,
-    title: "Prepare the Home",
-    desc: "Light staging, professional photos, and a market-ready price strategy.",
+    title: "Property Preparation",
+    desc: "We prepare pricing strategy, coordinate professional photography, and list your property effectively.",
   },
   {
     number: "03",
     icon: <User size={28} />,
-    title: "Place Tenants",
-    desc: "Vetted applicants, signed lease, deposit collected and held in trust.",
+    title: "Tenant Placement",
+    desc: "We screen applicants thoroughly, finalize lease agreements, and secure qualified tenants.",
   },
   {
     number: "04",
     icon: <ReceiptText size={28} />,
-    title: "Manage & Report",
-    desc: "Rent, repairs, inspections, and clear monthly reports handled for you.",
+    title: "Ongoing Management",
+    desc: "We handle rent collection, maintenance, inspections, and financial reporting with full transparency.",
   },
 ];
 
 const testimonials = [
   {
-    text: `"They truly care. My property has never been in better hands."`,
-    name: "Sujan Lama",
+    text: `"Since switching to Revital Moves, I’ve had consistent tenants, fewer vacancies, and complete peace of mind."`,
+    name: "A. Torres",
   },
   {
-    text: `"They truly care. My property has never been in better hands."`,
-    name: "Chandi Kodthiwada",
+    text: `"They are responsive, transparent, and genuinely care about my property."`,
+    name: "J. Jerome",
   },
   {
-    text: `"Finally, a management company that treats my home like their own. Highly recommend."`,
-    name: "Vijay Ejenkar",
+    text: `"My rental income is stable and everything is handled professionally."`,
+    name: "S. Santiago",
   },
 ];
 
@@ -73,7 +67,10 @@ export default function HowItWorks() {
           {/* ITEMS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-10 relative z-10">
             {steps.map((step, index) => (
-              <div key={index} className="text-center flex flex-col items-center">
+              <div
+                key={index}
+                className="text-center flex flex-col items-center"
+              >
                 {/* ICON */}
                 <div className="w-10 h-10 sm:w-15 sm:h-15 md:w-20 md:h-20 rounded-full border border-[#D9D9D9] bg-white flex items-center justify-center text-[#00003C] mb-8">
                   {step.icon}
@@ -103,7 +100,7 @@ export default function HowItWorks() {
           {/* TITLE */}
           <div className="text-center mb-16">
             <p className="uppercase tracking-[3px] text-sm text-[#A69177] mb-5">
-              What Our Clients Say
+              Trusted by Property Owners Across Massachusetts
             </p>
 
             <h2 className="text-[#00003C] text-2xl sm:text-3xl md:text-5xl font-serif">

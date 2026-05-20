@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Footer from "../../components/footer/Footer.jsx";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
 import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx";
@@ -19,23 +19,22 @@ export default function AboutSection() {
               ABOUT REVITAL MOVES
             </p>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif leading-tight text-[#0F172A]">
+            <h1 className="text-2xl sm:text-4xl lg:text-4xl font-serif leading-tight text-[#0F172A]">
               Care in Every <span className="text-[#DABE9B]">Move</span>.
               <br />
-              Confidence in Every{" "}
+              Confidence in Every
               <span className="text-[#DABE9B]">Property</span>.
             </h1>
           </div>
 
           {/* RIGHT TEXT */}
           <div className="">
-            <p className="text-gray-600 leading-relaxed sm:text-sm text-justify xl:relative top-10">
-              Revital Moves was born from a simple belief: your property
-              deserves more than management. It deserves devotion.
-              <br /> Based in Westford, Massachusetts, we serve discerning
-              property owners across the state who expect nothing less than
-              white-glove service, complete transparency, and genuine care for
-              their most valuable asset.
+            <p className="text-gray-600 leading-relaxed sm:text-md text-justify xl:relative top-10">
+              Revital Moves was founded on a simple belief: property management
+              should feel like partnership, not paperwork.
+              <br /> Based in Westford, we serve property owners across
+              Massachusetts who expect professionalism, transparency, and
+              dependable care for their most valuable assets.
             </p>
           </div>
         </div>
@@ -65,61 +64,114 @@ export default function AboutSection() {
           </div>
         </div>
 
+            {/* OUR STORY + PHILOSOPHY + COMMITMENT */}
+      <div className="mt-20 space-y-20">
+        
         {/* OUR STORY */}
-        <div className="grid md:grid-cols-[auto_1fr] gap-3 sm:gap-10 mt-16 items-start">
+        <div className="grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-start">
           {/* LEFT */}
-          <div className="">
-            <div className="flex items-center gap-4 px-1 py-2 text-[#DABE9B]">
+          <div>
+            <p className="uppercase tracking-[3px] text-sm text-[#DABE9B] mb-5">
               Our Story
-            </div>
-            <div className=" flex ">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#0F172A] max-w-70">
-                What Makes Us Different?{" "}
-              </div>
-              <span className="relative top-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="md:-rotate-40 h-6 sm:h-8 lg:h-10 w-auto"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeWidth={2}
-                    d="M12 4v16m-6-6l6 6l6-6"
-                  />
-                </svg>
-              </span>{" "}
-            </div>
+            </p>
+
+            <h2 className="text-3xl sm:text-4xl font-serif leading-tight text-[#0F172A]">
+              What Makes Us Different?
+            </h2>
           </div>
 
-          {/* RIGHT CONTENT */}
-          <div className="flex gap-6">
-            {/* VERTICAL LINE */}
-            <div className="w-2 bg-[#DABE9B] hidden sm:flex"></div>
-
-            {/* TEXT */}
-            <div className="text-md sm:text-xl text-justify leading-relaxed space-y-4 ">
+          {/* RIGHT */}
+          <div className="border-l-4 border-[#DABE9B] pl-6 sm:pl-10">
+            <div className="space-y-6 text-gray-600 leading-8 text-md sm:text-lg">
               <p>
-                We are not a faceless corporate rental agency. We are a
-                boutique, owner-focused stewardship firm that treats every home
-                as if it were our own. From rigorous tenant screening to 24/7
-                support and meticulous financial reporting, we handle every
-                detail so you can enjoy the elegance of passive income without
-                the stress.
+                Revital Moves was created to solve a gap in the industry:
+                large firms focused on volume, and small operators lacking
+                structure and consistency.
               </p>
 
-              {/* <p>
-                We understand that moving especially for seniors can be
-                emotional and overwhelming. That’s why our team approaches every
-                move with patience, respect, and attention to detail. From
-                careful packing to safe transportation and thoughtful downsizing
-                support, we ensure every step is handled with compassion.
-              </p> */}
+              <p>
+                We combine systems, experience, and personalized service so
+                every property is treated as a long-term investment — not a
+                transaction.
+              </p>
             </div>
           </div>
         </div>
+
+        {/* OUR PHILOSOPHY */}
+        <div className="grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-start">
+          {/* LEFT */}
+          <div>
+            <p className="uppercase tracking-[3px] text-sm text-[#DABE9B] mb-5">
+              Our Philosophy
+            </p>
+
+            <h2 className="text-3xl sm:text-4xl font-serif leading-tight text-[#0F172A]">
+              Stewardship Over Management
+            </h2>
+          </div>
+
+          {/* RIGHT */}
+          <div className="border-l-4 border-[#DABE9B] pl-6 sm:pl-10">
+            <p className="text-gray-600 leading-8 text-md sm:text-lg mb-8">
+              We are stewards of your property.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              {[
+                "Long-term thinking over short-term gains",
+                "Prevention over reaction",
+                "Transparency over assumptions",
+                "Responsibility over shortcuts",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-[#F8F6F2] rounded-xl px-5 py-4 text-[#0F172A] border border-[#ECE7DE]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* OUR COMMITMENT */}
+        <div className="grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-start">
+          {/* LEFT */}
+          <div>
+            <p className="uppercase tracking-[3px] text-sm text-[#DABE9B] mb-5">
+              Our Commitment
+            </p>
+
+            <h2 className="text-3xl sm:text-4xl font-serif leading-tight text-[#0F172A]">
+              Built Around Trust & Transparency
+            </h2>
+          </div>
+
+          {/* RIGHT */}
+          <div className="border-l-4 border-[#DABE9B] pl-6 sm:pl-10">
+            <div className="grid sm:grid-cols-2 gap-5 mb-8">
+              {[
+                "Clear communication at all times",
+                "Carefully screened tenants",
+                "Transparent financial reporting",
+                "Proactive maintenance handling",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-[#F8F6F2] rounded-xl px-5 py-4 text-[#0F172A] border border-[#ECE7DE]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <p className="text-lg sm:text-xl font-serif text-[#0F172A]">
+              No confusion. No hidden surprises. No neglect.
+            </p>
+          </div>
+        </div>
+      </div>
       </section>
       <WhyChooseUs />
       <MissionVison />
