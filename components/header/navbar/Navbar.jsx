@@ -28,7 +28,7 @@ const routeConfig = {
     scrolledText: "text-[#00003C]",
     scrolledActive: "text-[#DABE9B]",
   },
-  "/CONSULTATION": {
+  "/consultation": {
     textColor: "text-[#FFFFFF]",
     activeColor: "text-[#DABE9B]",
     scrolledText: "text-[#00003C]",
@@ -54,7 +54,7 @@ const navLinks = [
   { href: "/about", label: "ABOUT", side: "left" },
   { href: "/contact", label: "CONTACT", side: "left" },
   { href: "/services", label: "SERVICES", side: "right" },
-  { href: "/contact", label: "CONSULTATION", side: "right" },
+  { href: "/consultation", label: "CONSULTATION", side: "right" },
   { href: "/career", label: "CAREER", side: "right" },
 ];
 

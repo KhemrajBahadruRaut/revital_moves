@@ -127,9 +127,21 @@ export default function footer() {
             Additionals
           </h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li className="hover:text-white cursor-pointer">Career</li>
-            <li className="hover:text-white cursor-pointer">
-              Book Consultation
+            <li>
+              <Link
+                href="/career"
+                className="hover:text-white cursor-pointer transition"
+              >
+                Career
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/consultation"
+                className="hover:text-white cursor-pointer transition"
+              >
+                Book Consultation
+              </Link>
             </li>
           </ul>
         </div>
