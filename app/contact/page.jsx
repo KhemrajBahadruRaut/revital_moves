@@ -1,235 +1,295 @@
-"use client"
+"use client";
+
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
+import { getApiError, submitContactMessage } from "@/lib/api";
 
-export default function page() {
+const initialForm = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  phone: "",
+  service: "",
+  message: "",
+  terms_accepted: false,
+};
+
+export default function ContactPage() {
+  const [form, setForm] = useState(initialForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const updateField = (field, value) => {
+    setForm((current) => ({
+      ...current,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await submitContactMessage(form);
+      toast.success("Message sent successfully");
+      setForm(initialForm);
+    } catch (error) {
+      toast.error(getApiError(error, "Unable to send message"));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Navbar />
       <div className="w-full font-sans text-[#1a1a1a]">
-        {/* HERO */}
         <section
-          className="w-full py-20 px-6 md:px-16 text-white pt-35 bg-cover bg-center bg-no-repeat"
+          className="w-full bg-cover bg-center bg-no-repeat px-6 py-20 pt-35 text-white md:px-16"
           style={{
-            backgroundImage: `linear-gradient(to right, #00003C 0%, rgba(0,0,60,0.9) 25%, transparent 70%), url('/contact/c1.jpg')
-    `,
+            backgroundImage:
+              "linear-gradient(to right, #00003C 0%, rgba(0,0,60,0.9) 25%, transparent 70%), url('/contact/c1.jpg')",
           }}
         >
-          <p className="text-sm tracking-widest text-[#DABE9B] uppercase mb-3">
+          <p className="mb-3 text-sm uppercase tracking-widest text-[#DABE9B]">
             Get in Touch
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-semibold mb-4">
-            We’re Here to Help
+          <h1 className="mb-4 text-4xl font-semibold md:text-5xl">
+            We are Here to Help
           </h1>
 
-          <div className="w-20 h-0.5 bg-[#DABE9B] mb-6"></div>
+          <div className="mb-6 h-0.5 w-20 bg-[#DABE9B]" />
 
           <p className="max-w-xl text-gray-200">
-            Whether you're planning a move, exploring rental management, or just
-            have a question our team is ready to guide you with care and
+            Whether you are planning a move, exploring rental management, or
+            just have a question, our team is ready to guide you with care and
             expertise.
           </p>
         </section>
 
-        {/* MAIN */}
-        <section className="py-16 px-6 md:px-16 grid md:grid-cols-2 gap-10 bg-[#f7f7f7]">
-          {/* LEFT SIDE */}
+        <section className="grid gap-10 bg-[#f7f7f7] px-6 py-16 md:grid-cols-2 md:px-16">
           <div>
-            <p className="text-sm uppercase tracking-widest text-[#DABE9B] mb-2">
+            <p className="mb-2 text-sm uppercase tracking-widest text-[#DABE9B]">
               Contact Information
             </p>
 
-            <h2 className="text-2xl font-semibold mb-2">
+            <h2 className="mb-2 text-2xl font-semibold">
               Reach Out to Our Team
             </h2>
 
-            <div className="w-16 h-0.5 bg-[#DABE9B] mb-4"></div>
+            <div className="mb-4 h-0.5 w-16 bg-[#DABE9B]" />
 
-            <p className="text-gray-600 mb-6">
+            <p className="mb-6 text-gray-600">
               We typically respond within one business day. For urgent matters,
               please call us directly.
             </p>
 
-            {/* INFO CARDS */}
             <div className="space-y-4">
-              {/* Phone */}
-              <div className="flex items-center gap-4 border border-[#DABE9B80] p-4 rounded-lg">
-                <FiPhone className="text-[#DABE9B] text-xl" />
+              <div className="flex items-center gap-4 rounded-lg border border-[#DABE9B80] p-4">
+                <FiPhone className="text-xl text-[#DABE9B]" />
                 <div>
                   <p className="text-sm font-medium">Phone</p>
-                  <p className="text-gray-600 text-sm">(774)-287-6819</p>
-                  <p className="text-xs text-gray-400">Mon - Fri, 9PM - 5PM</p>
+                  <p className="text-sm text-gray-600">(774)-287-6819</p>
+                  <p className="text-xs text-gray-400">Mon - Fri, 9AM - 5PM</p>
                 </div>
               </div>
 
-              {/* Email */}
-              <div className="flex items-center gap-4 border border-[#DABE9B80] p-4 rounded-lg">
-                <FiMail className="text-[#DABE9B] text-xl" />
+              <div className="flex items-center gap-4 rounded-lg border border-[#DABE9B80] p-4">
+                <FiMail className="text-xl text-[#DABE9B]" />
                 <div>
                   <p className="text-sm font-medium">Email</p>
-                  <p className="text-gray-600 text-sm">management@revitalmoves.com</p>
-                  <p className="text-xs text-gray-400">We Will Get Back Soon</p>
+                  <p className="text-sm text-gray-600">
+                    management@revitalmoves.com
+                  </p>
+                  <p className="text-xs text-gray-400">We will get back soon</p>
                 </div>
               </div>
 
-              {/* Office */}
-              <div className="flex items-center gap-4 border border-[#DABE9B80] p-4 rounded-lg">
-                <FiMapPin className="text-[#DABE9B] text-xl" />
+              <div className="flex items-center gap-4 rounded-lg border border-[#DABE9B80] p-4">
+                <FiMapPin className="text-xl text-[#DABE9B]" />
                 <div>
                   <p className="text-sm font-medium">Office</p>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-sm text-gray-600">
                     270 Littleton Rd, Westford, MA, United States, 01852
                   </p>
                   <p className="text-xs text-gray-400">MA, USA</p>
                 </div>
               </div>
 
-              {/* working Hours */}
-              <div className="flex items-center gap-4 border border-[#DABE9B80] p-4 rounded-lg">
-                <FiMapPin className="text-[#DABE9B] text-xl" />
+              <div className="flex items-center gap-4 rounded-lg border border-[#DABE9B80] p-4">
+                <FiClock className="text-xl text-[#DABE9B]" />
                 <div>
                   <p className="text-sm font-medium">Hours</p>
-                  <p className="text-gray-600 text-sm">
-                    Mon-Fri, 8:30am-6:00pm
+                  <p className="text-sm text-gray-600">
+                    Mon-Fri, 8:30AM-6:00PM
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* SOCIAL */}
             <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-4">Follow us</h3>
+              <h3 className="mb-4 text-lg font-semibold">Follow us</h3>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 bg-[#00003C] text-white flex items-center justify-center rounded-md">
+                <a
+                  href="https://www.facebook.com/revitalmoves"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-md bg-[#00003C] text-white"
+                >
                   <FaFacebookF />
-                </div>
-                <div className="w-10 h-10 bg-[#00003C] text-white flex items-center justify-center rounded-md">
+                </a>
+                <a
+                  href="https://www.instagram.com/revital_moves/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-md bg-[#00003C] text-white"
+                >
                   <FaInstagram />
-                </div>
-                <div className="w-10 h-10 bg-[#00003C] text-white flex items-center justify-center rounded-md">
+                </a>
+                <span className="flex h-10 w-10 items-center justify-center rounded-md bg-[#00003C] text-white">
                   <FaLinkedinIn />
-                </div>
+                </span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE (FORM) */}
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold mb-2">Send Us a Message</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md md:p-8">
+            <h3 className="mb-2 text-xl font-semibold">Send Us a Message</h3>
 
-            <p className="text-gray-500 text-sm mb-6">
-              Fill in the details below and we'll get back to you shortly.
+            <p className="mb-6 text-sm text-gray-500">
+              Fill in the details below and we will get back to you shortly.
             </p>
 
-            <form className="space-y-4">
-              {/* ROW 1 */}
-              <div className="grid md:grid-cols-2 gap-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="grid gap-4 md:grid-cols-2">
                 <input
+                  required
                   type="text"
-                  placeholder="Enter First name"
-                  className="p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
+                  placeholder="Enter first name"
+                  value={form.first_name}
+                  onChange={(event) => updateField("first_name", event.target.value)}
+                  className="rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] p-3 outline-none"
                 />
                 <input
                   type="text"
-                  placeholder="Enter Last name"
-                  className="p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
+                  placeholder="Enter last name"
+                  value={form.last_name}
+                  onChange={(event) => updateField("last_name", event.target.value)}
+                  className="rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] p-3 outline-none"
                 />
               </div>
 
-              {/* ROW 2 */}
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid gap-4 md:grid-cols-2">
                 <input
+                  required
                   type="email"
                   placeholder="abc@example.com"
-                  className="p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
+                  value={form.email}
+                  onChange={(event) => updateField("email", event.target.value)}
+                  className="rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] p-3 outline-none"
                 />
                 <input
-                  type="text"
+                  type="tel"
                   placeholder="+1 (999) 000 0000"
-                  className="p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
+                  value={form.phone}
+                  onChange={(event) => updateField("phone", event.target.value)}
+                  className="rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] p-3 outline-none"
                 />
               </div>
 
-              {/* SELECT */}
-              <select className="w-full p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none text-gray-500">
-                <option>Select a service</option>
+              <select
+                value={form.service}
+                onChange={(event) => updateField("service", event.target.value)}
+                className="w-full rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] p-3 text-gray-500 outline-none"
+              >
+                <option value="">Select a service</option>
+                <option value="Moving Services">Moving Services</option>
+                <option value="Rental Management">Rental Management</option>
+                <option value="Property Care">Property Care</option>
+                <option value="General Inquiry">General Inquiry</option>
               </select>
 
-              {/* MESSAGE */}
               <textarea
-                rows="4"
+                required
+                rows={4}
                 placeholder="Enter your message here"
-                className="w-full p-3 rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] outline-none"
-              ></textarea>
+                value={form.message}
+                onChange={(event) => updateField("message", event.target.value)}
+                className="w-full rounded-md border border-[#DABE9B80] bg-[#DABE9B1A] p-3 outline-none"
+              />
 
-              {/* CHECKBOX */}
-              <div className="flex items-start gap-2 text-sm text-gray-500">
-                <input type="checkbox" className="mt-1" />
-                <p>
+              <label className="flex items-start gap-2 text-sm text-gray-500">
+                <input
+                  required
+                  type="checkbox"
+                  checked={form.terms_accepted}
+                  onChange={(event) =>
+                    updateField("terms_accepted", event.target.checked)
+                  }
+                  className="mt-1"
+                />
+                <span>
                   I agree to the Terms of Service and Privacy Policy. I consent
                   to being contacted regarding my inquiry.
-                </p>
-              </div>
+                </span>
+              </label>
 
-              {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full border border-[#DABE9B80] text-[#00003C] py-3 rounded-md hover:bg-[#00003C] hover:text-white transition"
+                disabled={isSubmitting}
+                className="flex w-full items-center justify-center gap-2 rounded-md border border-[#DABE9B80] py-3 text-[#00003C] transition hover:bg-[#00003C] hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
               >
-                SEND MESSAGE
+                <FiSend />
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
         </section>
 
-        {/* MAP + OFFICE */}
-        <section className="px-6 md:px-16 pb-16 grid md:grid-cols-2 gap-10 items-center">
-  {/* Google Map Embed */}
-  <div className="w-full h-60 rounded-lg overflow-hidden">
-    <iframe
-      title="Office Location"
-      src="https://www.google.com/maps?q=270+Littleton+Rd,+Westford,+MA,+United+States,+01852&output=embed"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-  </div>
+        <section className="grid items-center gap-10 px-6 pb-16 md:grid-cols-2 md:px-16">
+          <div className="h-60 w-full overflow-hidden rounded-lg">
+            <iframe
+              title="Office Location"
+              src="https://www.google.com/maps?q=270+Littleton+Rd,+Westford,+MA,+United+States,+01852&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
 
-  <div>
-    <p className="text-sm uppercase tracking-widest text-[#DABE9B] mb-2">
-      Contact Information
-    </p>
+          <div>
+            <p className="mb-2 text-sm uppercase tracking-widest text-[#DABE9B]">
+              Contact Information
+            </p>
 
-    <h3 className="text-2xl font-semibold mb-3">Visit Our Office</h3>
+            <h3 className="mb-3 text-2xl font-semibold">Visit Our Office</h3>
 
-    <div className="flex items-center gap-2 text-gray-600 mb-4">
-      <FiMapPin className="text-[#00003C]" />
-      <span>270 Littleton Rd, Westford</span>
-    </div>
+            <div className="mb-4 flex items-center gap-2 text-gray-600">
+              <FiMapPin className="text-[#00003C]" />
+              <span>270 Littleton Rd, Westford</span>
+            </div>
 
-    <p className="text-gray-500 mb-6">
-      MA, United States 01852
-    </p>
+            <p className="mb-6 text-gray-500">MA, United States 01852</p>
 
-    {/* Directions Button */}
-    <a
-      href="https://www.google.com/maps/dir/?api=1&destination=270+Littleton+Rd,+Westford,+MA,+United+States,+01852"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <button className="px-6 py-2 border border-[#00003C] text-[#00003C] rounded-md hover:bg-[#00003C] hover:text-white transition">
-        Get Directions
-      </button>
-    </a>
-  </div>
-</section>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=270+Littleton+Rd,+Westford,+MA,+United+States,+01852"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-md border border-[#00003C] px-6 py-2 text-[#00003C] transition hover:bg-[#00003C] hover:text-white"
+            >
+              Get Directions
+            </a>
+          </div>
+        </section>
       </div>
       <Footer />
     </>
