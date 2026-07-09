@@ -59,9 +59,12 @@ export default function ReadyWhenYouAre() {
             </button>
 
             {/* CTA BUTTON */}
+            <a href="/consultation">
+
             <button className="py-3 px-5 min-w-30 rounded-[10px] bg-[#00003C] text-white text-sm sm:text-md font-semibold uppercase tracking-wide hover:opacity-90 transition-all duration-300">
               Book A Consultation
             </button>
+            </a>
           </div>
         </div>
       </div>

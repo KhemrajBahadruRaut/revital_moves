@@ -70,19 +70,21 @@ export default function RentalManagementSection() {
               Comprehensive Property Management Built for Peace of Mind
               <br />
               <span className="text-sm sm:text-md md:text-xl">
-              Full-service rental management designed to protect your property,
-              maximize returns, and remove day-to-day stress.
+                Full-service rental management designed to protect your
+                property, maximize returns, and remove day-to-day stress.
               </span>
             </h2>
           </div>
 
-          <button className="group flex items-center gap-2 text-[#DABE9B] text-lg border-b border-[#DABE9B] w-fit pb-1">
-            Learn more
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 duration-300"
-            />
-          </button>
+          <a href="/about">
+            <button className="group flex items-center gap-2 text-[#DABE9B] text-lg border-b border-[#DABE9B] w-fit pb-1">
+              Learn more
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 duration-300"
+              />
+            </button>
+          </a>
         </div>
 
         {/* SERVICES BOX */}

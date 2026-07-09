@@ -35,10 +35,12 @@ export default function Hero() {
             </p>
 
             <div className=" mt-6 sm:mt-8 px-5 sm:px-6 md:px-8 py-2 sm:py-3 gap-10 justify-center flex flex-wrap">
+              <a href="/consultation">
               <button className=" px-5 sm:px-6 md:px-8 py-2 sm:py-3 bg-[#DABE9B] text-white text-xs sm:text-sm tracking-widest rounded">
                 BOOK A CONSULTATION
               </button>
-              <a href="" className="text-white flex items-center gap-3">
+              </a>
+              <a href="/services" className="text-white flex items-center gap-3">
                 VIEW OUR SERVICES
                 <span>
                   <FaArrowRightLong />
