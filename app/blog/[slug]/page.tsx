@@ -5,7 +5,7 @@ import Navbar from "@/components/header/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import ReadyWhenYouAre from "@/components/hero/ReadyWhenYouAre";
 import { blogPosts, getBlogPost } from "@/lib/blog";
-import { createPageMetadata, siteConfig } from "@/lib/seo";
+import { createPageMetadata, pageKeywords, siteConfig } from "@/lib/seo";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -29,6 +29,11 @@ export async function generateMetadata({
     title: `${post.title} | Revital Moves`,
     description: post.description,
     path: `/blog/${post.slug}`,
+    keywords: [
+      post.title,
+      `${post.category} Massachusetts`,
+      ...pageKeywords.blog,
+    ],
   });
 }
 

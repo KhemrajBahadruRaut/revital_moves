@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import {
   createPageMetadata,
+  pageKeywords,
   siteConfig,
 } from "@/lib/seo";
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     title: "Revital Moves | Property Management Company, Massachusetts",
     description: homeDescription,
     path: "/",
+    keywords: pageKeywords.home,
   }),
   formatDetection: {
     email: false,

@@ -3,13 +3,14 @@ import Link from "next/link";
 import Navbar from "@/components/header/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { blogPosts } from "@/lib/blog";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, pageKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Property Management Insights | Revital Moves Blog",
   description:
     "Read practical property management insights from Revital Moves about leasing, tenant support, rental maintenance, and protecting Massachusetts properties.",
   path: "/blog",
+  keywords: pageKeywords.blog,
 });
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {

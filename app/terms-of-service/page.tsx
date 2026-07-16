@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import LegalDocument from "@/components/pages/LegalDocument";
-import { createPageMetadata, siteConfig } from "@/lib/seo";
+import { createPageMetadata, pageKeywords, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Terms of Service | Revital Moves",
   description:
     "Review the terms that govern use of the Revital Moves website, consultation requests, contact forms, and online career applications.",
   path: "/terms-of-service",
+  keywords: pageKeywords.terms,
 });
 
 const sections = [

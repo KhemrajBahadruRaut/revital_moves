@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import LegalDocument from "@/components/pages/LegalDocument";
-import { createPageMetadata, siteConfig } from "@/lib/seo";
+import { createPageMetadata, pageKeywords, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy | Revital Moves",
   description:
     "Learn how Revital Moves collects, uses, protects, and retains information submitted through its contact, consultation, and career forms.",
   path: "/privacy-policy",
+  keywords: pageKeywords.privacy,
 });
 
 const sections = [
