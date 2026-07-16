@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function ReadyWhenYouAre() {
   return (
@@ -48,7 +49,8 @@ export default function ReadyWhenYouAre() {
           {/* RIGHT SIDE */}
           <div className="flex flex-col gap-7 w-full lg:w-auto">
             {/* PHONE BUTTON */}
-            <button
+            <a
+              href="tel:+17742876819"
               className="py-2 px-5 min-w-30 rounded-[10px] border flex items-center justify-center gap-3 text-[#00003C] text-sm sm:text-md font-semibold transition-all duration-300 hover:scale-[1.02]"
               style={{
                 borderColor: "#00003C",
@@ -56,15 +58,15 @@ export default function ReadyWhenYouAre() {
             >
               <Phone size={17} strokeWidth={2.2} />
               (774)-287-6819
-            </button>
+            </a>
 
             {/* CTA BUTTON */}
-            <a href="/consultation">
-
-            <button className="py-3 px-5 min-w-30 rounded-[10px] bg-[#00003C] text-white text-sm sm:text-md font-semibold uppercase tracking-wide hover:opacity-90 transition-all duration-300">
+            <Link
+              href="/consultation"
+              className="py-3 px-5 min-w-30 rounded-[10px] bg-[#00003C] text-center text-white text-sm sm:text-md font-semibold uppercase tracking-wide hover:opacity-90 transition-all duration-300"
+            >
               Book A Consultation
-            </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 const routeConfig = {
   "/": {
@@ -40,6 +42,12 @@ const routeConfig = {
     scrolledText: "text-[#00003C]",
     scrolledActive: "text-[#DABE9B]",
   },
+  "/blog": {
+    textColor: "text-[#FFFFFF]",
+    activeColor: "text-[#DABE9B]",
+    scrolledText: "text-[#00003C]",
+    scrolledActive: "text-[#DABE9B]",
+  },
 };
 
 const defaultConfig = {
@@ -56,19 +64,19 @@ const navLinks = [
   { href: "/services", label: "SERVICES", side: "right" },
   { href: "/consultation", label: "CONSULTATION", side: "right" },
   { href: "/career", label: "CAREER", side: "right" },
+  { href: "/blog", label: "BLOG", side: "right" },
 ];
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);       // whether navbar is slid up
   const [scrolled, setScrolled] = useState(false);   // whether past the hero threshold
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const lastScrollY = useRef(0);                     // track previous scroll position
   const pathname = usePathname();
   const config = routeConfig[pathname] ?? defaultConfig;
 
   useEffect(() => {
-    setHidden(false);
-    setScrolled(false);
-    lastScrollY.current = 0;
+    lastScrollY.current = window.scrollY;
 
     const handleScroll = () => {
       const currentY = window.scrollY;
@@ -90,14 +98,32 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isMenuOpen]);
 
   const textColor = scrolled ? config.scrolledText : config.textColor;
-  const bgStyle = scrolled ? "bg-white shadow-md" : "bg-transparent";
-  const navPosition = hidden ? "-translate-y-full" : "translate-y-0";
+  const bgStyle = scrolled || isMenuOpen ? "bg-white shadow-md" : "bg-transparent";
+  const navPosition = hidden && !isMenuOpen ? "-translate-y-full" : "translate-y-0";
 
   const getLinkClass = (href) => {
-    const isActive = pathname === href;
+    const isActive =
+      pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
     const color = isActive
       ? scrolled
         ? config.scrolledActive
@@ -112,7 +138,7 @@ const Navbar = () => {
   return (
     <div
       className={`
-        fixed top-0 left-0 w-full z-50 sm:pb-4
+        fixed top-0 left-0 w-full z-50 pb-4
         transition-all duration-500 ease-in-out
         ${bgStyle}
         ${navPosition}
@@ -139,39 +165,83 @@ const Navbar = () => {
             {navLinks
               .filter((l) => l.side === "left")
               .map((link) => (
-                <a key={link.href} href={link.href} className={getLinkClass(link.href)}>
+                <Link key={link.href} href={link.href} className={getLinkClass(link.href)}>
                   {link.label}
-                </a>
+                </Link>
               ))}
           </div>
 
           {/* LOGO */}
-          <div className="flex shrink-0 md:px-10 lg:px-30">
+          <Link
+            href="/"
+            aria-label="Revital Moves home"
+            className="flex shrink-0 md:px-10 lg:px-30"
+          >
             <Image
               src="/mainlogo/logo.png"
-              alt="logo"
+              alt="Revital Moves"
               width={60}
               height={60}
               className="sm:w-20 md:w-17.5 h-auto"
+              priority
             />
-          </div>
+          </Link>
 
           {/* RIGHT MENU */}
           <div className="hidden md:flex gap-4 lg:gap-10 w-full justify-start">
             {navLinks
               .filter((l) => l.side === "right")
               .map((link) => (
-                <a key={link.href} href={link.href} className={getLinkClass(link.href)}>
+                <Link key={link.href} href={link.href} className={getLinkClass(link.href)}>
                   {link.label}
-                </a>
+                </Link>
               ))}
           </div>
 
           {/* MOBILE MENU */}
-          <div className={`md:hidden absolute right-4 text-lg ${textColor}`}>☰</div>
+          <button
+            type="button"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className={`absolute right-4 flex h-11 w-11 items-center justify-center rounded-md md:hidden ${
+              isMenuOpen ? "text-[#00003C]" : textColor
+            }`}
+          >
+            {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
 
         </div>
       </div>
+
+      <nav
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        className={`absolute left-0 top-full w-full border-t border-[#DABE9B80] bg-white px-6 py-5 shadow-lg transition-all duration-300 md:hidden ${
+          isMenuOpen
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-2 opacity-0"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl flex-col">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className={`border-b border-[#DABE9B40] py-4 text-sm tracking-widest last:border-0 ${
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(`${link.href}/`))
+                  ? "font-semibold text-[#A69177]"
+                  : "text-[#00003C]"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 };

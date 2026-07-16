@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useMemo, memo, useState } from "react";
 import toast from "react-hot-toast";
@@ -9,7 +10,6 @@ import {
   CalendarClock,
   Home,
   Inbox,
-  Lock,
   LogOut,
   MessageSquare,
   Users,
@@ -157,7 +157,13 @@ export function AdminShell({ title, description, children, action }: AdminShellP
                 background: "linear-gradient(135deg, #DABE9B, #DABE9B/70)",
                 boxShadow: "0 0 20px #DABE9B40",
               }}>
-                <img src="/mainlogo/logo.png" className="h-6 w-6 object-contain brightness-0 invert" alt="Logo" />
+                <Image
+                  src="/mainlogo/logo.png"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 object-contain brightness-0 invert"
+                  alt="Revital Moves"
+                />
               </div>
               <div>
                 <h1 className="text-sm font-bold tracking-tight text-white">

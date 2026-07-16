@@ -1,9 +1,10 @@
 import React from "react";
-import { toast } from "react-hot-toast";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import { siteConfig } from "@/lib/seo";
 
-export default function footer() {
+export default function Footer() {
   return (
     <footer className="bg-[#00003C] text-white pt-16 pb-10 relative">
       {/* top lines */}
@@ -23,7 +24,7 @@ export default function footer() {
             Reach us
           </h3>
           <p className="text-sm text-gray-300 mb-4 leading-relaxed">
-            Massachusetts' Finest Homes Deserve More Than Management – They
+            Massachusetts&apos; Finest Homes Deserve More Than Management – They
             Deserve Devotion
           </p>
 
@@ -44,7 +45,14 @@ export default function footer() {
                   d="m21 3l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z"
                 />
               </svg>{" "}
-              270 Littleton Rd, Westford, MA, United States, 01852
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=270+Littleton+Rd+Westford+MA+01852"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                270 Littleton Rd, Westford, MA, United States, 01852
+              </a>
             </li>
             <li className="flex gap-2 items-center">
               <svg
@@ -58,7 +66,9 @@ export default function footer() {
                   d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zM20 8l-7.475 4.675q-.125.075-.262.113t-.263.037t-.262-.037t-.263-.113L4 8v10h16zm-8 3l8-5H4zM4 8v.25v-1.475v.025V6v.8v-.012V8.25zv10z"
                 />
               </svg>{" "}
-              management@revitalmoves.com
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
+                {siteConfig.email}
+              </a>
             </li>
             <li className="flex gap-2 items-center">
               <svg
@@ -72,7 +82,9 @@ export default function footer() {
                   d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79zm9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75zM7.5 3H4c-.55 0-1 .45-1 1c0 9.39 7.61 17 17 17c.55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1c-1.24 0-2.45-.2-3.57-.57a.8.8 0 0 0-.31-.05c-.26 0-.51.1-.71.29l-2.2 2.2a15.15 15.15 0 0 1-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.4 11.4 0 0 1 8.5 4c0-.55-.45-1-1-1"
                 />
               </svg>{" "}
-              (774)-287-6819
+              <a href={`tel:${siteConfig.phone}`} className="hover:text-white">
+                (774)-287-6819
+              </a>
             </li>
           </ul>
         </div>
@@ -118,6 +130,14 @@ export default function footer() {
                 Services
               </Link>
             </li>
+            <li>
+              <Link
+                href="/blog"
+                className="hover:text-white cursor-pointer transition"
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -161,49 +181,56 @@ export default function footer() {
         <div className="flex gap-4 text-white">
           {/* Facebook */}
           <a
-            href="https://www.facebook.com/revitalmoves"
+            href={siteConfig.socials.facebook}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Revital Moves on Facebook"
+            title="Revital Moves on Facebook"
           >
             <FaFacebookF className="cursor-pointer hover:text-[#DABE9B] transition" />
           </a>
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/revital_moves/"
+            href={siteConfig.socials.instagram}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Revital Moves on Instagram"
+            title="Revital Moves on Instagram"
           >
             <FaInstagram className="cursor-pointer hover:text-[#DABE9B] transition" />
           </a>
-
-          {/* LinkedIn */}
-          <button
-            type="button"
-            onClick={() =>
-              toast("LinkedIn profile uploading soon", {
-                position: "bottom-right",
-              })
-            }
-          >
-            <FaLinkedinIn className="cursor-pointer hover:text-[#DABE9B] transition" />
-          </button>
         </div>
 
         {/* COPYRIGHT */}
         <p className="text-center">
-          © {new Date().getFullYear()} Revital Moves. All rights reserved. |
-          Terms of Services | Privacy Policy
+          © {new Date().getFullYear()} Revital Moves. All rights reserved.{" "}
+          <span aria-hidden="true">|</span>{" "}
+          <Link href="/terms-of-service" className="hover:text-white hover:underline">
+            Terms of Service
+          </Link>{" "}
+          <span aria-hidden="true">|</span>{" "}
+          <Link href="/privacy-policy" className="hover:text-white hover:underline">
+            Privacy Policy
+          </Link>
         </p>
 
         {/* DEVELOPED BY */}
         <div className="flex items-center gap-2">
           <span>Developed by</span>
           <div>
-            <Link href="https://gr8.com.np/" width="100px" height="100px">
-              <img
-                src="gr8logo/logo.webp"
-                alt="/gr8 Private Limited logo"
+            <Link
+              href="https://gr8.com.np/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GR8 Tech, website developer"
+              title="GR8 Tech"
+            >
+              <Image
+                src="/gr8logo/logo.webp"
+                alt="GR8 Tech"
+                width={20}
+                height={17}
                 className="w-5 hover:scale-110 transition-all duration-200"
               />
             </Link>

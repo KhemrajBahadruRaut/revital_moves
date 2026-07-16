@@ -11,6 +11,8 @@ import Navbar from "../../components/header/navbar/Navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import SubService from "./SubService.jsx";
 import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function page() {
   return (
@@ -19,9 +21,12 @@ export default function page() {
       <div className="w-full font-sans ">
         {/* HERO */}
         <section className="relative h-screen sm:h-[70vh] flex items-center border pt-30">
-          <img
+          <Image
             src="/services/s2.jpg"
-            alt=""
+            alt="Massachusetts neighborhood served by Revital Moves"
+            fill
+            priority
+            sizes="100vw"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
@@ -75,7 +80,7 @@ Comprehensive, white-glove property management in Massachusetts.
                   First impressions are indelible. Our professional staging
                   teams curate interiors that highlight the architectural
                   heritage of your property, while high-resolution, light-filled
-                  photography captures the "quiet luxury" that attracts
+                  photography captures the &ldquo;quiet luxury&rdquo; that attracts
                   high-caliber tenants.
                 </p>
 
@@ -99,9 +104,12 @@ Comprehensive, white-glove property management in Massachusetts.
 
               {/* RIGHT IMAGE */}
               <div>
-                <img
+                <Image
                   src="/services/s4.jpg"
-                  alt="Luxury Home"
+                  alt="Professionally staged luxury rental home"
+                  width={4095}
+                  height={2730}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full h-95 object-cover rounded-3xl"
                 />
               </div>
@@ -111,9 +119,12 @@ Comprehensive, white-glove property management in Massachusetts.
             <div className="grid md:grid-cols-2 gap-10 items-center">
               {/* LEFT IMAGE */}
               <div>
-                <img
+                <Image
                   src="/services/s3.jpg"
-                  alt="Luxury Property"
+                  alt="Luxury rental property prepared for qualified tenants"
+                  width={4095}
+                  height={2730}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full h-95 object-cover rounded-3xl"
                 />
               </div>
@@ -174,7 +185,8 @@ Comprehensive, white-glove property management in Massachusetts.
                 </p>
 
                 {/* BUTTON */}
-                <button
+                <Link
+                  href="/contact"
                   className="px-7 py-3 rounded-lg text-white flex items-center gap-2 transition hover:opacity-90"
                   style={{
                     backgroundColor: "#A69177",
@@ -182,14 +194,17 @@ Comprehensive, white-glove property management in Massachusetts.
                 >
                   CONTACT US
                   <FiArrowRight />
-                </button>
+                </Link>
               </div>
 
               {/* RIGHT IMAGE */}
               <div>
-                <img
+                <Image
                   src="/services/s2.jpg"
-                  alt="Neighborhood"
+                  alt="Residential neighborhood with managed rental properties"
+                  width={4095}
+                  height={2730}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full h-95 object-cover rounded-3xl"
                 />
               </div>

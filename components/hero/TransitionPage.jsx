@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const TransitionPage = () => {
   return (
@@ -25,12 +26,12 @@ const TransitionPage = () => {
               we are packing family heirlooms or optimizing a rental portfolio.
             </p>
 
-            <a
-              href="#"
+            <Link
+              href="/about"
               className="text-[#DABE9B] text-sm font-medium hover:underline"
             >
               Learn more →
-            </a>
+            </Link>
           </div>
 
           {/* RIGHT */}
@@ -101,9 +102,12 @@ const TransitionPage = () => {
               care during life’s biggest transitions.
             </p>
 
-            <button className="bg-[#0B1B3A] text-white text-xs px-5 py-2 rounded flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="bg-[#0B1B3A] text-white text-xs px-5 py-2 rounded flex w-fit items-center gap-2"
+            >
               LEARN MORE <span>→</span>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -132,9 +136,12 @@ const TransitionPage = () => {
               care during life’s biggest transitions.
             </p>
 
-            <button className="bg-white text-[#1E2A78] text-xs px-5 py-2 rounded flex items-center gap-2">
+            <Link
+              href="/services"
+              className="bg-white text-[#1E2A78] text-xs px-5 py-2 rounded flex w-fit items-center gap-2"
+            >
               LEARN MORE <span>→</span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

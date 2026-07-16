@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const ConsultationSection = () => {
   return (
@@ -24,7 +25,10 @@ const ConsultationSection = () => {
         {/* RIGHT ACTIONS */}
         <div className="flex flex-col items-start md:items-end gap-4 ">
           {/* PHONE */}
-          <button className="border sm:w-65 border-[#0E0E2C] text-[#0E0E2C] text-[12px] sm:text-md px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-[#0E0E2C] hover:text-white transition">
+          <a
+            href="tel:+17742876819"
+            className="border sm:w-65 border-[#0E0E2C] text-[#0E0E2C] text-[12px] sm:text-md px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-[#0E0E2C] hover:text-white transition"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -37,12 +41,15 @@ const ConsultationSection = () => {
               />
             </svg>
             (774)-287-6819
-          </button>
+          </a>
 
           {/* CTA BUTTON */}
-          <button className="bg-[#0E0E2C] sm:w-65 text-white text-[12px] sm:text-md px-8 py-3 rounded-md font-small tracking-wide hover:opacity-90 transition">
+          <Link
+            href="/consultation"
+            className="bg-[#0E0E2C] sm:w-65 text-center text-white text-[12px] sm:text-md px-8 py-3 rounded-md font-small tracking-wide hover:opacity-90 transition"
+          >
             BOOK A CONSULTATION
-          </button>
+          </Link>
         </div>
       </div>
     </section>

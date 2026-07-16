@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 import { FiPhone, FiMail, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import Navbar from "../../components/header/navbar/Navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import { getApiError, submitContactMessage } from "@/lib/api";
+import { siteConfig } from "@/lib/seo";
 
 const initialForm = {
   first_name: "",
@@ -137,24 +139,25 @@ export default function ContactPage() {
 
               <div className="flex gap-4">
                 <a
-                  href="https://www.facebook.com/revitalmoves"
+                  href={siteConfig.socials.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Revital Moves on Facebook"
+                  title="Revital Moves on Facebook"
                   className="flex h-10 w-10 items-center justify-center rounded-md bg-[#00003C] text-white"
                 >
                   <FaFacebookF />
                 </a>
                 <a
-                  href="https://www.instagram.com/revital_moves/"
+                  href={siteConfig.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Revital Moves on Instagram"
+                  title="Revital Moves on Instagram"
                   className="flex h-10 w-10 items-center justify-center rounded-md bg-[#00003C] text-white"
                 >
                   <FaInstagram />
                 </a>
-                <span className="flex h-10 w-10 items-center justify-center rounded-md bg-[#00003C] text-white">
-                  <FaLinkedinIn />
-                </span>
               </div>
             </div>
           </div>
@@ -235,8 +238,15 @@ export default function ContactPage() {
                   className="mt-1"
                 />
                 <span>
-                  I agree to the Terms of Service and Privacy Policy. I consent
-                  to being contacted regarding my inquiry.
+                  I agree to the{" "}
+                  <Link href="/terms-of-service" className="underline hover:text-[#00003C]">
+                    Terms of Service
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/privacy-policy" className="underline hover:text-[#00003C]">
+                    Privacy Policy
+                  </Link>
+                  . I consent to being contacted regarding my inquiry.
                 </span>
               </label>
 

@@ -5,6 +5,7 @@ import ReadyWhenYouAre from "../../components/hero/ReadyWhenYouAre.jsx";
 import WhyChooseUs from "./WhyChooseUs.jsx";
 import MissionVison from "./MissionVison.jsx";
 import Faq from "./Faq.jsx";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -42,23 +43,32 @@ export default function AboutSection() {
         {/* IMAGES */}
         <div className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5 mt-12 ">
           <div className="">
-            <img
+            <Image
               src="/about/a3.jpg"
-              alt="moving"
+              alt="Bright living room in a Massachusetts rental home"
+              width={2500}
+              height={1877}
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
               className=" w-full  object-cover h-full rounded-xl"
             />
           </div>
           <div className="">
-            <img
+            <Image
               src="/about/a4.jpg"
-              alt="delivery"
+              alt="Well-maintained residential property interior"
+              width={3091}
+              height={2048}
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
               className="rounded-xl w-full h-full object-cover"
             />
           </div>
           <div className="">
-            <img
+            <Image
               src="/about/a5.jpg"
-              alt="delivery"
+              alt="Comfortable home cared for by Revital Moves"
+              width={3840}
+              height={2160}
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
               className="rounded-xl w-full h-full object-cover"
             />
           </div>

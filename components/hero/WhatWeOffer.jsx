@@ -9,6 +9,7 @@ import {
   Headphones,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -76,15 +77,16 @@ export default function RentalManagementSection() {
             </h2>
           </div>
 
-          <a href="/about">
-            <button className="group flex items-center gap-2 text-[#DABE9B] text-lg border-b border-[#DABE9B] w-fit pb-1">
-              Learn more
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 duration-300"
-              />
-            </button>
-          </a>
+          <Link
+            href="/about"
+            className="group flex items-center gap-2 text-[#DABE9B] text-lg border-b border-[#DABE9B] w-fit pb-1"
+          >
+            Learn more
+            <ArrowRight
+              size={18}
+              className="group-hover:translate-x-1 duration-300"
+            />
+          </Link>
         </div>
 
         {/* SERVICES BOX */}

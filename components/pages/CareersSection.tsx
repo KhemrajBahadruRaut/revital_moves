@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import toast from "react-hot-toast";
 import {
   FiArrowRight,
@@ -147,9 +148,12 @@ export default function CareersSection() {
     <>
       <Navbar />
       <section className="relative flex h-screen items-center border pt-30 sm:h-[70vh]">
-        <img
+        <Image
           src="/services/s2.jpg"
-          alt=""
+          alt="Massachusetts neighborhood where Revital Moves serves property owners"
+          fill
+          priority
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -298,6 +302,7 @@ export default function CareersSection() {
               <button
                 type="button"
                 onClick={closeApplication}
+                aria-label="Close application form"
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 text-[#00003C]"
               >
                 <FiX />
