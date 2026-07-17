@@ -48,6 +48,31 @@ Comprehensive, white-glove property management in Massachusetts.
             </p>
           </div>
         </section>
+        <section className="border-b border-[#DABE9B66] bg-white px-6 py-14 md:px-16 md:py-18">
+          <div className="mx-auto grid max-w-7xl gap-8 rounded-3xl border border-[#DABE9B80] bg-[#F8F6F2] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#A69177]">
+                HOA &amp; Condominium/Townhouse Association Management
+              </p>
+              <h2 className="text-2xl font-semibold text-[#00003C] sm:text-3xl">
+                Professional HOA Management Services Throughout Massachusetts
+              </h2>
+              <p className="mt-4 max-w-3xl leading-7 text-[#616161]">
+                At Revital Moves LLC, we provide comprehensive Homeowners
+                Association (HOA) and Condominium Association management
+                services designed to protect your community, preserve property
+                values, and simplify day-to-day operations.
+              </p>
+            </div>
+            <Link
+              href="/services/hoa-condo-management"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#00003C] px-6 py-3.5 font-semibold text-white transition hover:bg-[#A69177]"
+            >
+              Our HOA Management Services
+              <FiArrowRight />
+            </Link>
+          </div>
+        </section>
         <section
           className="w-full px-6 md:px-16 py-20"
           style={{

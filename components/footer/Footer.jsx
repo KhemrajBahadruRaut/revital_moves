@@ -163,6 +163,14 @@ export default function Footer() {
                 Book Consultation
               </Link>
             </li>
+            <li>
+              <Link
+                href="/services/hoa-condo-management"
+                className="hover:text-white cursor-pointer transition"
+              >
+                HOA &amp; Condominium/Townhouse Association Management
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

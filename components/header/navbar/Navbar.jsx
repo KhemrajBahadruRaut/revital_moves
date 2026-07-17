@@ -73,7 +73,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const lastScrollY = useRef(0);                     // track previous scroll position
   const pathname = usePathname();
-  const config = routeConfig[pathname] ?? defaultConfig;
+  const parentRoute = Object.keys(routeConfig).find(
+    (route) => route !== "/" && pathname.startsWith(`${route}/`),
+  );
+  const config = routeConfig[pathname] ?? routeConfig[parentRoute] ?? defaultConfig;
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;

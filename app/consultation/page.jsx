@@ -162,6 +162,9 @@ export default function ConsultationPage() {
               <option value="">Consultation type</option>
               <option value="Moving Plan">Moving Plan</option>
               <option value="Rental Management">Rental Management</option>
+              <option value="HOA & Condominium/Townhouse Association Management">
+                HOA & Condominium/Townhouse Association Management
+              </option>
               <option value="Property Care">Property Care</option>
               <option value="General Consultation">General Consultation</option>
             </select>

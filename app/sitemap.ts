@@ -6,6 +6,11 @@ const publicRoutes = [
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services", changeFrequency: "monthly", priority: 0.9 },
+  {
+    path: "/services/hoa-condo-management",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
   { path: "/contact", changeFrequency: "yearly", priority: 0.8 },
   { path: "/consultation", changeFrequency: "monthly", priority: 0.9 },
   { path: "/career", changeFrequency: "weekly", priority: 0.6 },

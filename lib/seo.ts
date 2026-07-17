@@ -55,6 +55,16 @@ export const pageKeywords = {
     "24/7 tenant support",
     "financial reporting for landlords",
   ],
+  hoaServices: [
+    "HOA Management Services",
+    "Homeowners Association",
+    "Condominium Association management services",
+    "Townhouse Community",
+    "Financial Management",
+    "Vendor Management",
+    "Board Support",
+    "Massachusetts Communities",
+  ],
   career: [
     "property management careers Massachusetts",
     "Revital Moves jobs",
@@ -97,6 +107,8 @@ type PageMetadata = {
   description: string;
   path: string;
   keywords?: string[];
+  image?: string;
+  imageAlt?: string;
 };
 
 export function createPageMetadata({
@@ -104,6 +116,8 @@ export function createPageMetadata({
   description,
   path,
   keywords = pageKeywords.home,
+  image = "/hero/ms1.jpg",
+  imageAlt = "Massachusetts rental property managed by Revital Moves",
 }: PageMetadata): Metadata {
   return {
     title,
@@ -121,8 +135,8 @@ export function createPageMetadata({
       type: "website",
       images: [
         {
-          url: "/hero/ms1.jpg",
-          alt: "Massachusetts rental property managed by Revital Moves",
+          url: image,
+          alt: imageAlt,
         },
       ],
     },
@@ -130,7 +144,7 @@ export function createPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["/hero/ms1.jpg"],
+      images: [image],
     },
   };
 }
